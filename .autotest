@@ -5,6 +5,10 @@ require 'autotest/timestamp'
 module Autotest::GnomeNotify
   def self.notify title, msg, img
     system "notify-send '#{title}' '#{msg}' -i #{img} -t 3000"
+    # system "notify-send '#{title}' '#{msg}' -i #{img} -t 3000"
+    # cmd = "notify-send '#{title}' '#{msg}' -i #{img} -t 3000"
+    # puts cmd
+    # system #{cmd}
   end
 
   Autotest.add_hook :ran_command do |at|
@@ -15,13 +19,13 @@ module Autotest::GnomeNotify
     full_sentence, green, failures, garbage, pending = $~.to_a.map(&:to_i)
     if output
       if failures > 0 
-        puts "AUTOTEST FAIL!"
-        notify "FAIL", "#{output}", "#{image_root}/fail.png"
+#        puts "AUTOTEST FAIL!"
+        notify "FAIL! You jacked it up!", "#{output}", "#{image_root}/fail.png"
       elsif pending > 0
         notify "Pending", "#{output}", "#{image_root}/pending.png"
       else
-        puts "AUTOTEST PASS!"
-        notify "Pass", "#{output}", "#{image_root}/pass.png"
+ #       puts "AUTOTEST PASS!"
+        notify "PASS! You are the man!", "#{output}", "#{image_root}/pass.png"
       end
     end
   end

@@ -1,9 +1,14 @@
 class PagesController < ApplicationController
-#  def home
-#    blash = User.all
-#  end
+  def home
+    @title = "Home"
+  end
 
   def contact
+    @title = "Contact"
+  end
+
+  def about
+    @title = "About"
   end
 
 end
