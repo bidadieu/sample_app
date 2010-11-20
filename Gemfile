@@ -14,9 +14,9 @@ end
 group :test do
     gem 'rspec', '2.0.1'
     gem 'spork', '0.8.4'
-   gem 'webrat', '0.7.1'
-   gem 'redgreen', '1.2.2'
-   gem 'autotest', '4.3.2'
-   gem 'autotest-rails-pure', '4.1.0'
-     gem 'test-unit', '2.1.1'
+    gem 'webrat', '0.7.1'
+    gem 'redgreen', '1.2.2'
+    gem 'autotest', '4.3.2'
+    gem 'autotest-rails-pure', '4.1.0'
+    gem 'test-unit', '2.1.1'
 end
