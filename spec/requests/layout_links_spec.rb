@@ -7,6 +7,7 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Home")    
   end
 
+  # note: we request '/contact' rather than 'contact' to test the route
   it "should have a Contact page at '/contact'" do
     get '/contact'
     response.should have_selector('title', :content => "Contact")
