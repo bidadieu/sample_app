@@ -131,10 +131,15 @@ td.sidebar {
     width: 30%;
     padding: 1em;
     vertical-align: top;
-    background: #bbb;
+    background: #ddd;
 }
 
 .profile img.gravatar {
     border: 1px solid #999;
     margin-bottom: -15px;
+}
+
+/* User Sign up */
+div.field div.actions {
+    margin-bottom: 10px;
 }
