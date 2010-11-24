@@ -37,6 +37,14 @@ module SampleApp
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
+    # TDK: can append new keywords to be filtered in logs
     config.filter_parameters += [:password]
+
+    ## TDK added for spork support
+    if Rails.env.test?
+      initializer :after => :initialize_dependency_mechanism do
+        ActiveSupport::Dependencies.mechanism = :load
+      end
+    end
   end
 end
