@@ -24,6 +24,12 @@ module SessionsHelper
     @current_user ||= user_from_remember_token
   end
 
+  # used to authenticate access to pages -- 
+  # see users_controller.authenticate and before_filter
+  def deny_access
+    flash[:notice] = "Please sign in to access this page."
+    redirect_to signin_path unless signed_in?
+  end
 
   private
   
