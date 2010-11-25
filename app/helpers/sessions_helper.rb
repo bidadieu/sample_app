@@ -16,6 +16,10 @@ module SessionsHelper
     current_user = nil
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   def current_user=(user)
     @current_user = user
   end
@@ -24,11 +28,23 @@ module SessionsHelper
     @current_user ||= user_from_remember_token
   end
 
-  # used to authenticate access to pages -- 
-  # see users_controller.authenticate and before_filter
   def deny_access
-    flash[:notice] = "Please sign in to access this page."
-    redirect_to signin_path unless signed_in?
+    store_location
+    redirect_to signin_path, :notice => "Please sign in to access this page."
+  end
+
+  def store_location
+    # session: a cookie that expires at end of session
+    session[:return_to] = request.fullpath
+  end
+
+  def clear_return_to
+    session[:return_to] = nil
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    clear_return_to
   end
 
   private
