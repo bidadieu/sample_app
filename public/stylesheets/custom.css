@@ -1,10 +1,12 @@
+/* custom.css */
 
 .container {
   width: 710px;
 }
 
 body {
-  background: #BCC;
+  /* background: #BCC; */
+    background: #e5ecf9;
 }
 
 header {
@@ -30,17 +32,18 @@ section h1 {
 /* Links */
 
 a {
-  color: #069;
-  text-decoration: none;
+  /* color: #069; */
+    color: #415c8f; 
+    text-decoration: none;
 }
 
 a:hover {
-  color: #069;
+  color: #069; 
   text-decoration: underline;
 }
 
 a:visited {
-  color: #069;
+  color: #415c8f; 
 }
 
 /* Navigation */
@@ -69,7 +72,8 @@ nav ul li a {
 }
 
 nav ul li a:visited {
-  color: #09c;
+  /* color: #09c; */
+    color: #415c8f; 
 }
 
 nav ul li a:hover {
@@ -86,7 +90,7 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: #fff;
-  background: #09c;
+  background: #415c8f;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
@@ -253,4 +257,40 @@ form.new_micropost {
 form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
+}
+
+/* will_paginate */
+
+.pagination {
+    padding: 3px;
+    margin: 3px;
+}
+
+.pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #aaaadd;
+    text-decoration: none;
+    color: * #000099;
+}
+
+.pagination a:hover, .pagination a:active {
+    border: 1px solid #000099;
+    color: #000;
+}
+
+.pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #000099;
+    font-weight: bold;
+    background-color: #000099;
+    color: #FFF;
+}
+
+.pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #eee;
+    color: #ddd;
 }
